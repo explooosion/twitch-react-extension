@@ -1,0 +1,33 @@
+@import '../scss/index';
+
+#header {
+  font-size: 20px;
+
+  @media only screen and (max-width: $screen-xl) {
+    text-align: center;
+  }
+
+  .header-text {
+    display: block;
+    margin: 1rem 0;
+    width: 600px;
+    text-decoration: none;
+    color: $dark;
+  }
+
+  /* overwrite flag-select */
+  .flag-select {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    .arrow-down {
+      display: none;
+      color: #fff;
+    }
+  }
+}
