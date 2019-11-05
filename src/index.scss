@@ -3,13 +3,13 @@
 @import './scss/index';
 
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font-family: $global-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

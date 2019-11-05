@@ -4,10 +4,9 @@ import './App.scss';
 import { HashRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-// import Header from './container/Header';
-// import Footer from './container/Footer';
-
 import { setColor, getColor } from './service/Color';
+
+import Header from './container/Header';
 
 class App extends Component {
   constructor(props) {
@@ -72,18 +71,15 @@ class App extends Component {
         <p>Would you care to cycle a color?</p>
         <div>
           <button
-            type='button'
-            id='cycle'
+            type="button"
             onClick={() => this.updateColor()}
           >
             Yes, I would
           </button>
         </div>
-        <div id='box'>
-          <div id='circle' style={{ backgroundColor: this.state.color }}>
+        <div className="box">
+          <div className="circle" style={{ backgroundColor: this.state.color }}>
           </div>
-        </div>
-        <div id='list'>
         </div>
       </div>
     );
@@ -97,7 +93,8 @@ class App extends Component {
 
     return (
       <HashRouter>
-        <div id='app' className='full-height' data-locale={this.locale}>
+        <div id="app" className="full-height" data-locale={this.locale}>
+          <Header />
           {this.state.finishedLoading ? this.renderMain() : this.renderLoading()}
         </div>
       </HashRouter>
