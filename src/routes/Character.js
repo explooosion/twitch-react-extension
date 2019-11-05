@@ -4,6 +4,8 @@ import './Character.scss';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
+import Footer from '../containers/Footer';
+
 class Character extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,7 @@ class Character extends Component {
     return (
       <div id="Character">
         Character
+        <Footer />
       </div>
     );
   }

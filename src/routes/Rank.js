@@ -4,6 +4,8 @@ import './Rank.scss';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
+import Footer from '../containers/Footer';
+
 class Rank extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,7 @@ class Rank extends Component {
     return (
       <div id="Rank">
         Rank
+        <Footer />
       </div>
     );
   }

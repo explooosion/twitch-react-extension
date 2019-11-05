@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
+import { Switch, HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { getColor } from './service/Color';
@@ -23,7 +23,7 @@ class App extends Component {
     super(props);
     this.dispatch = props.dispatch;
     this.auth = props.auth;
-    this.twitch = props.twitch;
+    this.twitch = null;
     this.state = {
       finishedLoading: true,
     };
@@ -34,6 +34,8 @@ class App extends Component {
       this.twitch.onAuthorized(async ({ token, userId }) => {
 
         this.dispatch(setAuth({ token, userId }));
+        console.log('token', token);
+        console.log('userId', userId);
 
         if (!this.state.finishedLoading) {
           // if the component hasn't finished loading (as in we've not set up after getting a token), let's set it up now.

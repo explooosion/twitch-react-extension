@@ -4,6 +4,8 @@ import './Login.scss';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
+import Footer from '../containers/Footer';
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,7 @@ class Login extends Component {
     return (
       <div id="Login">
         Login
+        <Footer />
       </div>
     );
   }

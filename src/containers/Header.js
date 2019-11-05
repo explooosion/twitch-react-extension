@@ -3,9 +3,12 @@ import './Header.scss';
 
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import ReactFlagsSelect from 'react-flags-select';
+import { Link } from 'react-router-dom';
+// import ReactFlagsSelect from 'react-flags-select';
 
 import { setLocal } from '../actions/settings';
+
+import imgLogo from '../images/logo.png';
 
 class Header extends Component {
   constructor(props) {
@@ -25,11 +28,15 @@ class Header extends Component {
 
   render() {
     return (
-      <header id='header'>
-        <center style={{ position: 'relative' }}>
+      <header id="header">
+        { /* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+        <Link to="/"><img title="logo" alt="logo" className="header-logo" src={imgLogo} /></Link>
+        <span className="header-title">{this.t('header-title')}</span>
+        {
+          /**
           <h1>
             <a href='/' className='header-text'>
-              HEADER <small>{this.t('title')}</small>
+              <small>{this.t('title')}</small>
             </a>
           </h1>
           <ReactFlagsSelect
@@ -41,7 +48,8 @@ class Header extends Component {
             showSelectedLabel={false}
             onSelect={(e) => this.onSelectFlag(e)}
           />
-        </center>
+           */
+        }
       </header>
     );
   }

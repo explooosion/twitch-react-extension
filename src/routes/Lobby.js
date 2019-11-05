@@ -4,6 +4,8 @@ import './Lobby.scss';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
+import Footer from '../containers/Footer';
+
 class Lobby extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +17,7 @@ class Lobby extends Component {
     return (
       <div id="lobby">
         lobby
+        <Footer />
       </div>
     );
   }

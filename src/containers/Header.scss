@@ -1,18 +1,21 @@
 @import '../scss/index';
 
 #header {
-  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: $dark;
 
-  @media only screen and (max-width: $screen-xl) {
-    text-align: center;
+  .header-logo {
+    margin: 0 .35rem;
+    width: 50px;
+    height: 50px;
   }
 
-  .header-text {
-    display: block;
-    margin: 1rem 0;
-    width: 600px;
-    text-decoration: none;
-    color: $white;
+  .header-title {
+    font-size: 18px;
+    font-weight: bold;
   }
 
   /* overwrite flag-select */
