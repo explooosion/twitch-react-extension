@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import { HashRouter } from 'react-router-dom';
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { setColor, getColor } from './service/Color';
+import { getColor } from './service/Color';
+
 import { setAuth } from './actions/auth';
-import Header from './container/Header';
+
+// Routes
+import Login from './routes/Login';
+import Lobby from './routes/Lobby';
+import Character from './routes/Character';
+import Battle from './routes/Battle';
+import Rank from './routes/Rank';
+
+// Containers
+import Header from './containers/Header';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.dispatch = props.dispatch;
     this.auth = props.auth;
-    this.twitch = window.Twitch ? window.Twitch.ext : null;
+    this.twitch = props.twitch;
     this.state = {
       finishedLoading: true,
-      color: '#6441a4',
     };
   }
 
@@ -51,46 +60,34 @@ class App extends Component {
     }
   }
 
-  async updateColor() {
-    const color = await setColor(this.auth.token);
-    console.log('set', color);
-    this.setState({ color });
-  }
-
-  renderMain() {
-    return (
-      <div>
-        <h2>Hello, World!</h2>
-        <p>Would you care to cycle a color?</p>
-        <div>
-          <button
-            type="button"
-            onClick={() => this.updateColor()}
-          >
-            Yes, I would
-          </button>
-        </div>
-        <div className="box">
-          <div className="circle" style={{ backgroundColor: this.state.color }}>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   renderLoading() {
     return (<div>Loading...</div>);
   }
 
-  render() {
+  renderMain() {
+    return (<div>{this.renderRoues()}</div>);
+  }
 
+  renderRoues() {
     return (
-      <HashRouter>
+      <Switch>
+        <Route exact path="/" component={Lobby} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/character" component={Character} />
+        <Route exact path="/battle" component={Battle} />
+        <Route exact path="/rank" component={Rank} />
+      </Switch>
+    );
+  }
+
+  render() {
+    return (
+      <Router>
         <div id="app" className="full-height" data-locale={this.locale}>
           <Header />
           {this.state.finishedLoading ? this.renderMain() : this.renderLoading()}
         </div>
-      </HashRouter>
+      </Router>
     );
   }
 }
@@ -100,6 +97,7 @@ App.propTypes = {}
 const mapStateToProps = state => {
   return {
     auth: state.auth,
+    twitch: state.twitch,
   }
 }
 

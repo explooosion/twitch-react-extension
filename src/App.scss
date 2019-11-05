@@ -1,3 +1,12 @@
+@import './scss/index';
+
+#app {
+  width: $app-width;
+  height: $app-height;
+  color: $white;
+  background-color: rgba($dark-primary , .8);
+}
+
 .box {
   position: relative;
   left: 50%;

@@ -3,15 +3,18 @@
 @import './scss/index';
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
   margin: 0;
   padding: 0;
-  width: 318px;
-  height: 496px;
+  width: 100vw;
+  height: 100vh;
   font-family: $global-font;
+  background-color: $primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $white;
-  background-color: $dark;
 }
 
 code {
