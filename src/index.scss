@@ -5,9 +5,13 @@
 body {
   margin: 0;
   padding: 0;
+  width: 318px;
+  height: 496px;
   font-family: $global-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: $white;
+  background-color: $dark;
 }
 
 code {

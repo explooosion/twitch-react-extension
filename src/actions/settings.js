@@ -1,4 +1,4 @@
 export const setLocal = payload => ({
-  type: 'SET_LOCALE',
+  type: 'SET_AUTH',
   payload,
 });

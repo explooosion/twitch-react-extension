@@ -5,7 +5,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import ReactFlagsSelect from 'react-flags-select';
 
-import { setLocal } from '../actions';
+import { setLocal } from '../actions/settings';
 
 class Header extends Component {
   constructor(props) {
