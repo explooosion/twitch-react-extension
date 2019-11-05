@@ -3,7 +3,7 @@ $white: #fefefe;
 
 $dark: #262833;
 $gray: #4a4f52;
-$primary: #7e8ce0;
+$primary: #12273b;
 $danger: #ffa48e;
 $success: #4afcaf;
 $warning: #feaf60;
@@ -13,6 +13,12 @@ $light-gray: #f0f2f5;
 $light-primary: lighten($primary, 10);
 $light-danger: lighten($danger, 10);
 $light-success: lighten($success, 10);
-$light-success: lighten($success, 10);
-$light-success: lighten($success, 10);
+$light-warning: lighten($warning, 10);
 $light-info: lighten($info, 10);
+
+$dark-primary: darken($primary, 5);
+$dark-danger: darken($danger, 5);
+$dark-success: darken($success, 5);
+$dark-success: darken($success, 5);
+$dark-warning: darken($warning, 5);
+$dark-info: darken($info, 5);

@@ -12,6 +12,7 @@
         "max-nesting-depth": null,
         "no-empty-source": null,
         "no-descending-specificity": null,
+        "number-leading-zero": null,
         "order/properties-alphabetical-order": null,
         "order/properties-order": [
             "position",
