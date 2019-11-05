@@ -1,6 +1,6 @@
 {
-  "name": "react-redux-i18n-boilerplate",
-  "description": "react-redux-i18n-boilerplate",
+  "name": "twitch-react-extension",
+  "description": "twitch-react-extension",
   "version": "0.0.1",
   "author": {
     "name": "Robby",
@@ -8,23 +8,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/explooosion/react-redux-i18n-boilerplate.git"
+    "url": "https://github.com/explooosion/twitch-react-extension.git"
   },
   "bugs": {
-    "url": "https://github.com/explooosion/react-redux-i18n-boilerplate/issues"
+    "url": "https://github.com/explooosion/twitch-react-extension/issues"
   },
   "license": "MIT",
   "keywords": [
     "react",
     "redux",
     "i18n",
-    "boilerplate"
+    "boilerplate",
+    "twitch",
+    "extension"
   ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "stylelint src/**/*.scss --syntax scss",
+    "lint:fix": "stylelint src/**/*.scss --syntax scss --fix"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -55,7 +59,14 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.0",
+    "pre-commit": "^1.2.2",
+    "stylelint": "^11.1.1",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-sass-guidelines": "^6.1.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "stylelint-scss": "^3.12.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -65,5 +76,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
+  ],
+  "pre-commit": [
+    "lint"
   ]
 }
